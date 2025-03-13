@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://github.com/Haimichi/haimichi-portfolio.github.io.git",
   "dependencies": {
+    "@formatjs/intl-localematcher": "^0.5.4",
     "@heroicons/react": "^2.2.0",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
@@ -11,21 +12,19 @@
     "@testing-library/user-event": "^13.5.0",
     "aos": "^2.3.4",
     "framer-motion": "^10.18.0",
-    "gh-pages": "^6.3.0",
     "i18next": "^24.2.3",
     "i18next-browser-languagedetector": "^8.0.4",
+    "negotiator": "^0.6.3",
+    "next-i18next": "^15.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet-async": "^2.0.5",
     "react-i18next": "^15.4.1",
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.3.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4",
-    "next-i18next": "^15.2.0",
-    "@formatjs/intl-localematcher": "^0.5.4",
-    "negotiator": "^0.6.3",
-    "use-dark-mode": "^2.3.1"
+    "react-scripts": "^5.0.1",
+    "use-dark-mode": "^2.3.1",
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -57,7 +56,10 @@
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.10",
     "@types/use-dark-mode": "^2.3.1",
+    "ajv": "^8.17.1",
+    "ajv-keywords": "^5.1.0",
     "autoprefixer": "^10.4.21",
+    "gh-pages": "^6.3.0",
     "postcss": "^8.5.3",
     "react-router-sitemap": "^1.2.0",
     "tailwindcss": "^4.0.14"

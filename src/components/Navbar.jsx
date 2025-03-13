@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MenuIcon, XIcon, SunIcon, MoonIcon } from '@heroicons/react/outline';
-import { useTheme } from '../hooks/useDarkMode';
+import { useTheme } from './hooks/useDarkMode';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
