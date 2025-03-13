@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Haimichi/haimichi-portfolio.github.io.git/static/css/main.61bedd42.css",
+    "main.js": "/Haimichi/haimichi-portfolio.github.io.git/static/js/main.9ecffa27.js",
+    "static/js/453.eb1a4753.chunk.js": "/Haimichi/haimichi-portfolio.github.io.git/static/js/453.eb1a4753.chunk.js",
+    "index.html": "/Haimichi/haimichi-portfolio.github.io.git/index.html",
+    "main.61bedd42.css.map": "/Haimichi/haimichi-portfolio.github.io.git/static/css/main.61bedd42.css.map",
+    "main.9ecffa27.js.map": "/Haimichi/haimichi-portfolio.github.io.git/static/js/main.9ecffa27.js.map",
+    "453.eb1a4753.chunk.js.map": "/Haimichi/haimichi-portfolio.github.io.git/static/js/453.eb1a4753.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.61bedd42.css",
+    "static/js/main.9ecffa27.js"
+  ]
+}
