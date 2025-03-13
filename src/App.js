@@ -1,13 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
-import Navbar from '../my-portfolio/src/components/Navbar';
-import Footer from '../my-portfolio/src/components/Footer';
-import Home from '../my-portfolio/src/pages/Home';
-import Projects from '../my-portfolio/src/pages/Projects';
-import Contact from '../my-portfolio/src/pages/Contact';
-import Skills from '../my-portfolio/src/pages/Skills';
-import Experience from '../my-portfolio/src/pages/Experience';
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
+import Projects from './pages/Projects';
+import Contact from './pages/Contact';
 import { useTranslation } from 'react-i18next';
 import './i18n';
 
@@ -23,14 +20,11 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/skills" element={<Skills />} />
-            <Route path="/experience" element={<Experience />} />
           </Routes>
         </main>
-        <Footer />
       </div>
     </HelmetProvider>
   );
 }
 
-export default App; 
+export default App;

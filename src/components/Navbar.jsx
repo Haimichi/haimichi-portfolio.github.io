@@ -1,11 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { MenuIcon, XIcon, SunIcon, MoonIcon } from '@heroicons/react/outline';
-import { useTheme } from './hooks/useDarkMode';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const darkMode = useTheme();
+  const [darkMode, setDarkMode] = useState(false);
+  
+  useEffect(() => {
+    const isDark = localStorage.getItem('darkMode') === 'true';
+    setDarkMode(isDark);
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, []);
+
+  const toggleDarkMode = () => {
+    const newDarkMode = !darkMode;
+    localStorage.setItem('darkMode', newDarkMode.toString());
+    setDarkMode(newDarkMode);
+    
+    if (newDarkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  };
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -47,13 +68,13 @@ const Navbar = () => {
 
             {/* Dark mode toggle */}
             <button
-              onClick={darkMode.toggle}
-              className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
+              onClick={toggleDarkMode}
+              className="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none transition-colors"
             >
-              {darkMode.value ? (
-                <SunIcon className="h-6 w-6 text-yellow-400" />
+              {darkMode ? (
+                <SunIcon className="h-5 w-5" />
               ) : (
-                <MoonIcon className="h-6 w-6 text-gray-600" />
+                <MoonIcon className="h-5 w-5" />
               )}
             </button>
 
@@ -61,12 +82,12 @@ const Navbar = () => {
             <div className="md:hidden">
               <button
                 onClick={toggleMenu}
-                className="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none"
+                className="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none transition-colors"
               >
                 {isOpen ? (
-                  <XIcon className="block h-6 w-6" />
+                  <XIcon className="h-6 w-6" />
                 ) : (
-                  <MenuIcon className="block h-6 w-6" />
+                  <MenuIcon className="h-6 w-6" />
                 )}
               </button>
             </div>
@@ -82,8 +103,8 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                className="hover:bg-gray-200 dark:hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium"
-                onClick={toggleMenu}
+                className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                onClick={() => setIsOpen(false)}
               >
                 {item.name}
               </Link>
